@@ -1,0 +1,11 @@
+-- Grow A Garden Config: Xoá cây + Boost FPS
+
+-- Xoá tất cả object tên có "tree" (cây)
+for _, obj in pairs(workspace:GetChildren()) do
+    if obj:IsA("Model") and string.find(obj.Name:lower(), "tree") then
+        obj:Destroy()
+    end
+end
+
+-- Boost FPS bằng cách tắt 3D render
+game:GetService("RunService"):Set3dRenderingEnabled(false)
